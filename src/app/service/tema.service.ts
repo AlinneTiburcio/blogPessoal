@@ -19,7 +19,20 @@ export class TemaService {
     return this.http.get<Tema[]>('http://localhost:8080/temas',this.token)
   }
 
+  getByIdTema(id:number):Observable<Tema>{
+    return this.http.get<Tema>(`http://localhost:8080/temas/${id}`,this.token)
+  }
+
   postTema(tema: Tema):Observable<Tema>{
     return this.http.post<Tema>('http://localhost:8080/temas',tema,this.token)
+  }
+
+  putTema(tema: Tema):Observable<Tema>{
+    return this.http.put<Tema>('http://localhost:8080/temas', tema, this
+    .token)
+  }
+
+  deteleTema(id: number){
+    return this.http.delete(`http://localhost:8080/temas/${id}`,this.token)
   }
 }
