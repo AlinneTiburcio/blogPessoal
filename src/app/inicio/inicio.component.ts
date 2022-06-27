@@ -33,11 +33,10 @@ export class InicioComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    if(environment.token == ''){
-      alert('Sua sessão expirou, faça o login novamente');
-      this.router.navigate(['/entrar']);
-    }
+  ngOnInit(){
+    //if(environment.token == ''){
+      //this.router.navigate(['/entrar']);
+    //}
 
     this.getAllTemas()
     this.getAllPostagens()
